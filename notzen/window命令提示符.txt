@@ -1,0 +1,63 @@
+一、磁盘检查与修复
+	命令	示例	说明
+	chkdsk		chkdsk C: /f /r	检查并修复磁盘错误
+	sfc			sfc /scannow	系统文件检查自动修复损坏文件
+二、磁盘与驱动器操作
+	命令	示例	说明
+	chkdsk		chkdsk C:	检查磁盘错误
+	diskpart	diskpart	磁盘分区工具
+	label		label D: Data	设置磁盘卷标
+	diskcopy	diskcopy A: B:	复制软盘内容
+	vol			vol C:			查看卷标和序列号
+三、系统信息与管理
+	命令	示例	说明
+	systeminfo	systeminfo	查看系统信息
+	hostname	hostname	查看计算机名
+	ver			ver			查看 Windows 版本
+	tasklist	tasklist	查看正在运行的进程
+	taskkill	taskkill /pid 1234 /f	强制结束进程
+	shutdown	shutdown /s /t 0	关机
+	shutdown	shutdown /r /t 0	重启
+	whoami		whoami				显示当前用户
+	set			set					查看所有环境变量
+	echo %PATH%	echo %PATH%			查看指定变量
+四、网络操作
+	命令	示例	说明
+	ping		ping www.baidu.com			测试网络连通性
+	ipconfig	ipconfig /all				查看网络配置
+	tracert		tracert www.baidu.com		路由追踪
+	nslookup	nslookup www.baidu.com		DNS 查询
+	netstat		netstat -an					查看网络连接和端口
+	ftp			ftp host					FTP 传输文件
+	telnet		telnet host port			测试端口连通性
+	net use		net use Z: \\server\share	连接网络驱动器
+五、用户和权限管理
+	命令	示例	说明
+	net user		net user		查看所有用户
+	whoami /groups	whoami /groups	查看用户所属组
+
+六、其他常用命令
+	命令	示例	说明
+	tasklist	tasklist					查看运行进程
+	taskkill	taskkill /im notepad.exe /f	杀死进程
+	assoc		assoc .txt					查看文件类型关联
+	ftype		ftype txtfile				查看文件类型对应程序
+	path		path						查看系统 PATH
+	title		title My CMD				设置命令提示符标题
+	cls			cls							清屏
+	time		time /t						查看时间
+	date		date /t						查看日期
+七、系统服务管理
+	命令	示例	说明
+	sc query	sc query				查看服务状态
+	sc start	sc start wuauserv		启动服务
+	sc stop		sc stop wuauserv		停止服务
+	net start	net start				查看已启动服务
+	net stop	net stop servicename	停止服务
+
+八、压缩与归档
+	命令	示例	说明
+	tar								tar -cvf archive.tar folder												Windows 10+ 可使用 tar 命令打包
+	powershell Compress-Archive		powershell Compress-Archive -Path folder -DestinationPath archive.zip	ZIP 压缩
+
+

@@ -1,0 +1,110 @@
+一、文件和目录操作
+	命令	示例	说明
+	ls			ls -l					列出目录文件（长格式显示）
+	cd			cd /var/www				切换目录
+	pwd			pwd						显示当前工作目录
+	mkdir		mkdir newfolder			创建目录
+	rm			rm file.txt				删除文件
+	rm -rf		rm -rf folder			递归删除文件夹及内容
+	cp			cp file1 file2			复制文件
+	cp -r		cp -r dir1 dir2			递归复制目录
+	mv			mv file1 file2			移动/重命名文件
+	touch		touch file.txt			创建空文件或更新文件时间
+	cat			cat file.txt			显示文件内容
+	more / less	less file.txt			分页显示文件内容
+	head		head -n 10 file.txt		查看前10行
+	tail		tail -f /var/log/syslog	查看文件尾部并动态跟踪
+	find		find /var -name "*.log"	查找文件
+	locate		locate filename			快速查找文件（需 updatedb）
+	file		file test.txt			查看文件类型
+	stat		stat file.txt			查看文件详细信息
+	chmod		chmod 755 script.sh				修改文件权限
+	chown		chown user:group file.txt		修改文件所有者
+	ln			ln -s /source/path /link/path	创建符号链接
+二、用户与权限管理
+	命令	示例	说明
+	whoami	whoami						查看当前用户
+	id		id username					查看用户ID和组ID
+	adduser	adduser newuser				添加新用户
+	useradd	useradd newuser				添加新用户
+	passwd	passwd username				修改用户密码
+	usermod	usermod -aG sudo username	修改用户信息，添加到组
+	groups	groups username				查看用户所属组
+	su		su - username				切换用户
+	sudo	sudo command				提升权限执行命令
+三、磁盘与文件系统
+	命令	示例	说明
+	df -h		df -h					查看磁盘空间使用情况
+	du -sh		du -sh /var/www			查看目录大小
+	mount		mount /dev/sda1 /mnt	挂载分区
+	umount		umount /mnt				卸载分区
+	lsblk		lsblk					查看磁盘分区信息
+	fdisk -l	fdisk -l				查看分区表
+	df -i		df -i					查看 inode 使用情况
+四、进程管理
+	命令	示例	说明
+	ps		ps aux			查看所有进程
+	top		top				实时查看进程资源占用
+	htop	htop			交互式进程查看（需安装）
+	kill	kill 1234		结束进程
+	kill -9	kill -9 1234	强制结束进程
+	pkill	pkill nginx		按名称杀进程
+	jobs	jobs			查看后台作业
+	fg / bg	fg %1			前台/后台作业切换
+五、网络管理
+	命令	示例	说明
+	ifconfig	ifconfig							查看网络接口（老命令）
+	ip addr		ip addr								查看网络接口（推荐）
+	ping		ping www.baidu.com					测试网络连通性
+	netstat		netstat -tulnp						查看端口/连接
+	ss			ss -tulnp							查看端口/连接（推荐）
+	curl		curl http://example.com				测试HTTP请求
+	wget		wget http://example.com/file		下载文件
+	scp			scp file user@host:/path			远程拷贝文件
+	rsync		rsync -avz src/ user@host:/dest/	同步文件夹
+	telnet		telnet host port					测试端口连通性
+六、系统监控
+	命令	示例	说明
+	uptime	uptime		查看系统运行时间
+	free -h	free -h		查看内存使用情况
+	vmstat	vmstat 1	查看系统状态
+	iostat	iostat -x 1	查看磁盘 I/O
+	dmesg	`dmesg	tail`
+	who		who			查看当前登录用户
+	last	last		查看登录历史
+七、软件包管理（按系统）
+	Ubuntu / Debian
+		命令	示例
+		apt update			更新软件源
+		apt upgrade			升级系统
+		apt install package	安装软件
+		apt remove package	卸载软件
+		dpkg -l				查看已安装软件
+	CentOS / RHEL
+		命令	示例
+		yum update			更新系统
+		yum install package	安装软件
+		yum remove package	卸载软件
+		rpm -qa				查看已安装软件
+八、压缩与归档
+	命令	示例	说明
+	tar	tar -cvf archive.tar folder/		打包目录
+		tar -xvf archive.tar				解包	
+		tar -czvf archive.tar.gz folder/	打包并 gzip 压缩	
+		tar -xzvf archive.tar.gz			解压 gzip	
+	zip	zip -r archive.zip folder/			压缩为 zip
+		unzip	unzip archive.zip			解压 zip
+九、日志查看
+	命令	示例	说明
+	tail -f /var/log/syslog						实时查看日志	
+	less /var/log/nginx/error.log				分页查看日志	
+	grep		grep "error" /var/log/syslog	搜索日志关键字
+	journalctl	journalctl -u nginx	查看 systemd 服务日志
+十、服务管理（Systemd）
+	命令	示例	说明
+	systemctl start nginx	启动服务	
+	systemctl stop nginx	停止服务	
+	systemctl restart nginx	重启服务	
+	systemctl status nginx	查看服务状态	
+	systemctl enable nginx	开机启动	
+	systemctl disable nginx	关闭开机启动

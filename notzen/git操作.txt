@@ -1,0 +1,104 @@
+
+下载命令
+git clone https://....git
+
+
+创建仓库
+	一、前提准备
+
+		你要有一个 GitHub
+		 账号。
+
+		电脑上需要安装 git：
+
+		Windows：可以装 Git for Windows
+		，然后用 Git Bash。
+
+		macOS/Linux：一般自带，git --version 测一下。
+
+		配置 git 的全局用户名和邮箱（第一次用必做）：
+
+		git config --global user.name "你的GitHub用户名"
+		git config --global user.email "你的GitHub注册邮箱"
+
+	二、在 GitHub 创建仓库
+
+		登录 GitHub → 点击右上角的 + → New repository
+
+		输入仓库名（Repository name），比如 my-project
+
+		选择 Public（公开） 或 Private（私有）
+
+		不要勾选 Initialize README（避免冲突）
+
+		点击 Create repository
+
+		创建完成后，你会看到一个页面，上面有一段命令提示，比如：
+
+		SSH 地址： git remote add origin https://github.com/你的用户名/my-project.git
+		http 地址： git remote set-url origin https://github.com/你的用户名/仓库名.git
+
+	三、本地项目上传
+
+		假设你本地已有一个项目文件夹，比如 my-project。
+
+		第一步：进入项目目录
+			cd /你的项目路径/my-project
+
+		第二步：初始化 git
+			git init
+
+		第三步：添加文件到暂存区
+			git add .
+
+		第四步：提交到本地仓库
+			git commit -m "第一次提交"
+
+		第五步：连接远程仓库
+
+			把 URL 替换成你 GitHub 上那个仓库的地址：
+
+			git remote add origin https://github.com/你的用户名/my-project.git
+
+		第六步：推送到 GitHub
+			git branch -M main   # 确保分支名是 main
+			git push -u origin main
+
+
+		执行后，刷新 GitHub 仓库页面，就能看到你的项目文件了 🎉
+
+	四、后续更新流程
+
+		以后只要修改代码，上传就这三步：
+
+		git add .
+		git commit -m "更新了XXX"
+		git push
+
+		下载仓库
+			git clone https://github.com/用户名/仓库名.git
+		查看分支
+			git branch -a
+
+
+	五，上传时某文件出错查看路径
+		git rev-list --objects --all | grep 53c9f64b71ffb36d07f2a1c71410a1aa9ee7ff75
+
+
+	六，网络问题配置
+		HTTP代理配置
+		git config --global http.proxy http://127.0.0.1:7890
+		git config --global https.proxy http://127.0.0.1:7890
+
+		取消代理配置
+		git config --global --unset http.proxy
+		git config --global --unset https.proxy
+
+
+
+	
+
+
+
+
+其他：找ChatGPT
