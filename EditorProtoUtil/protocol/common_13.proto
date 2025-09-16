@@ -1,0 +1,22 @@
+
+//排行榜
+message msg_1301
+{  
+    //功能类型 1=周排行，2=月排行，3=年排行
+    optional byte type = 1;
+    //json数据：角色id，角色昵称，角色等级，角色任务积分
+    optional string jsonDatas = 2;
+}
+
+//反馈数据：存入到数据库，3个工作日内回复
+message msg_1302
+{
+    //角色id
+    optional int32 roleId = 1;
+    //反馈问题类型：1=游戏问题，2=崩溃问题，3=充值问题，4=其他问题
+    optional byte type = 2;
+    //反馈描述：30个字
+    optional string content = 3;
+    //电子邮件
+    optional string e_mail = 4;
+}

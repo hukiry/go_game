@@ -1,0 +1,36 @@
+
+//元宇宙信息：发起或点赞
+message MetaInfo
+{
+    //发起者的id
+    optional int32 friendId = 2;
+    //地图的点赞数量
+    optional int32 likeNum = 3;
+    //发起者地图id
+    optional byte numberId = 4;
+    //挑战状态，0=未接受挑战，1=接受过挑战
+    optional byte state = 5;
+
+    //地图的所有评论
+    optional string comment = 6;
+}
+
+//元宇宙数据:元宇宙表，发给谁，数据就存入给对方
+message msg_1601
+{
+    //0=对战消息，1=发起挑战，2=点赞，3=评论
+    optional byte state = 1;
+    //我的角色id
+    optional int32 roleId = 2;
+
+    //好友角色id
+    optional int32 friendId = 3;
+    //好友点赞的地图id
+    optional byte numberId = 4;
+    //好友发起评论
+    optional string comment = 6;
+
+    //地图返回的挑战消息
+    repeated MetaInfo metaInfos = 5;
+}
+

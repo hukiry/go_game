@@ -1,0 +1,9 @@
+
+//服务器错误处理
+message msg_1901
+{
+    //请求的cmd
+    optional uint16 cmd = 1;
+    //错误码
+    optional byte code = 2;
+}

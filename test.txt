@@ -1,0 +1,6 @@
+1, 配置：Settings>Go>Go Modules>Environment
+   GOPROXY=https://goproxy.cn,direct
+
+ 2, JETBRAINS 下载和破解
+    	https://www.jetbrains.com/go/download/other.html
+    	https://nopj.cn/

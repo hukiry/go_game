@@ -1,0 +1,20 @@
+
+//所有活动：定时请求，领取操作
+message msg_1201{
+
+    optional byte state=1[default=true];  //0=接收成功，1=请求数据，2=活动完成，3=活动进度值
+    //功能类型 SystemFunctionType
+    optional byte type = 2;
+    //角色id
+    optional int32 roleId = 3;
+    //活动ID
+    optional int16 configId = 7;
+    optional bool isFinshed = 9;
+    //活动开始时间
+    optional uint32 creatTime = 5;
+    //活动结束时间
+    optional uint32 expirateTime = 6;
+    //活动进度字符串
+    optional string strValue =8;
+    //活动id和参数值:后端传值使用
+    optional string paramsValue = 4;}

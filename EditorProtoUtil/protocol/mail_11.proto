@@ -1,0 +1,31 @@
+
+message mailData
+{
+    //邮件和公告id
+    optional int16 id = 1;
+    //邮件和公告标题，角色昵称
+    optional string title = 2;
+     //邮件和公告内容
+    optional bool isLife = 5;
+    //邮件和公告内容
+    optional string content = 3;
+    //邮件和公告奖励：后面用于充值补发json数据
+    optional string rewards = 4;
+}
+
+//---邮件和公告数据操作
+message msg_1101
+{
+    //0=接收成功，1=请求数据，2=读取，3=删除，4=领取
+    optional byte state = 1;
+    //功能类型
+    optional byte type = 2;
+    //角色id
+    optional int32 roleId = 3;
+    //邮件和公告id 用于已读
+    optional int16 id = 5;
+    //公告语言代码
+    optional string lanCode = 6;
+    //邮件和公告id
+    repeated mailData mails = 4;
+}

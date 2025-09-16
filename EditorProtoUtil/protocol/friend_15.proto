@@ -1,0 +1,109 @@
+﻿
+//好友消息
+message GFriendInfo {
+    //用户id
+    optional uint32 roleId = 1;
+    //0=帮助一点生命，1=申请好友，2=被申请好友，3=邀请，4=被邀请挑战，5=删除好友，6，取消申请，7，取消挑战
+    optional byte state = 2;
+    //等级
+    optional uint16 level = 3;
+    //昵称
+    optional string nick = 4;
+    //头像
+    optional byte headId = 5;
+    //好友邀请地图
+    optional byte mapId = 6;
+}
+
+//社团成员信息
+message GMemeberInfo {
+    //用户id
+    optional uint32 roleId = 1;
+    //等级
+    optional uint16 level = 3;
+    //昵称
+    optional string nick = 4;
+    //头像
+    optional byte headId = 5;
+    //是团主
+    optional bool isMasser = 6;
+}
+
+//生命信息
+message GLifeInfo {
+    //聊天角色id
+    optional uint32 Id = 1;
+    //寻求帮助时间
+    optional uint32 time = 2;
+    //状态：请求帮助，帮助其他
+    optional byte state = 3;
+    //昵称
+    optional string nick = 4;
+    //帮助进度
+    optional byte count = 5;
+}
+
+//聊天消息
+message GChatInfo {
+    //聊天角色id
+    optional uint32 Id = 1;
+    //聊天时间
+    optional uint32 time = 2;
+    //聊天内容
+    optional string content = 3;
+}
+
+//好友系统30个
+message msg_1501{
+    //玩家id
+    optional uint32 roleId = 1;
+    //1=请求消息列表，2=我的好友，3=陌生人列表
+    optional byte state = 2;
+    //好友的id操作
+    optional uint32 friendId = 3;
+    //好友消息
+    repeated GFriendInfo friendInfos = 4;
+}
+
+message msg_1502{
+    //玩家id
+    optional  uint32 roleId = 1;
+    //操作类型
+    optional byte type = 2;
+    //操作好友状态
+    optional byte state = 3;
+    //好友的id操作
+    optional uint32 friendId = 4;
+    //好友邀请地图
+    optional byte mapId = 5;
+}
+
+//留言板
+message msg_1503{
+    //玩家id
+    optional uint32 roleId = 1;
+    //好友的id操作
+    optional uint32 friendId = 2;
+    //状态：获取聊天记录，发送聊天
+    optional byte state = 3;
+    //发送聊天的消息 限制30个字符
+    optional string message = 4;
+    //聊天记录 限制20条
+    repeated GChatInfo chatInfos = 5;
+}
+
+//社团队友：限制30人
+message msg_1504 {
+    //玩家id
+    optional uint32 roleId = 1;
+    //帮助好友id
+    optional uint32 friendId = 2;
+    //社团id
+    optional uint32 gassId = 3;
+    //社团状态
+    optional byte state = 4;
+    //社团队友
+    repeated GMemeberInfo memeberInfos = 5;
+    //社团生命列表
+    repeated GLifeInfo lifeInfos = 6;
+}

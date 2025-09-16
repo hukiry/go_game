@@ -1,0 +1,15 @@
+
+//商店数据
+message msg_1401
+{
+    //0=接收成功，1=请求商店数据，2=支付
+    optional byte state = 1;
+    //角色id
+    optional int32 roleId = 2;
+
+    //商店id
+    optional int32 shopId = 3;
+
+    //商店id
+    optional int16 price = 4;
+}

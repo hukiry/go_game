@@ -1,0 +1,6 @@
+- 1, client 用户管理
+- 2， logic 消息逻辑处理
+- 3， message 消息函数注册管理
+- 4， packet 消息包数据管理
+- 5， tcpserver 服务器管理
+-

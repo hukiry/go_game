@@ -1,0 +1,37 @@
+﻿
+数据类型
+byte = 1字节
+int16 = 2字节
+int32 = 4字节
+int64 = 8字节
+float = 4字节
+double = 8字节
+bool = 1字节
+char = 8位字节
+string = 字符串字节
+message = 嵌套数据结构,
+uint16 = 无符号2字节,
+uint32 = 无符号4字节,
+uint64 = 无符号8字节,
+
+optional 可选标识
+repeated 集合标识
+
+
+Lua声明协议结构
+	todo 定义字段：
+	    test(字段名) = protobuf_type.byte(字段类型)
+	todo 定义字段集合：
+		test_IsArray = true(集合标识)
+		test(字段名) = protobuf_type.byte(字段类型)
+	todo 定义结构体：
+	    test(结构名) = {
+		    protobuf_type.byte(字段类型)，
+		    ...
+	     }
+	todo 定义结构体集合：
+		test_IsArray = true(集合标识)
+		test(结构名) = {
+			protobuf_type.byte(字段类型)，
+			...
+		 }

@@ -1,0 +1,90 @@
+
+//请求登录
+message msg_1001
+{
+    //首次登录的设备id
+    optional string deviceId = 1;
+    //首次登录的语言
+    optional string lang = 2;
+    //登录方式
+    optional byte login_type = 3;
+    //登录平台
+    optional byte platform = 4;
+}
+
+//货币资源
+message itemsResource{
+    //货币类型
+    optional byte type = 1;
+    //货币数量
+    optional int32 number = 2;
+}
+
+message itemsPack{
+    //货币类型
+    optional byte type = 1;
+    //货币数量
+    optional string value = 2;
+}
+
+//货币资源
+message itemsMeta{
+    //货币类型
+    optional byte numberId = 1;
+    //货币数量
+    optional byte state = 2;
+}
+
+//上传游戏数据
+message msg_1002
+{
+    optional uint32 roleId = 1;
+    //绑定的设备id
+    optional string deviceId = 1;
+    //是绑定登录
+    optional string token = 2;
+    //时间搓
+    optional uint32 timeStamp = 3;
+    //用于切换设备
+    optional byte state = 4;
+    //货币数据集合
+    repeated itemsResource items= 5;
+    //其他属性集合
+    repeated itemsPack itemsPacks= 6;
+}
+
+//注销或绑定
+message msg_1003
+{
+    //0=接收成功，1=注销，2=绑定, 3=切换设备, 4=修改昵称
+    optional byte state = 1;
+    //上传绑定Token
+    optional string token = 3;
+    //绑定的设备id
+    optional string deviceId = 4;
+    //昵称
+    optional string roleNick = 5;
+    //绑定的账号类型
+    optional byte bindAccount = 2;
+}
+
+//心跳时间
+message msg_1004
+{
+    //时间戳
+    optional uint32 timeStamp = 5;
+}
+
+message msg_1005
+{
+    //货币类型
+    optional byte type = 1;
+    //货币数量
+    optional byte number = 2;
+}
+
+message msg_1006
+{
+    //修改头像id
+    optional int16 headID = 1;
+}
